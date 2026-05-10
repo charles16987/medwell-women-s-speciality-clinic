@@ -38,10 +38,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-18">
       {/* S1: HERO BANNER */}
-      <section className="relative h-[90vh] min-h-[700px] flex items-center overflow-hidden">
-        <Hero3D />
+      <section className="relative h-[90vh] min-h-[700px] flex items-center overflow-hidden banner-img">
+        {/* <Hero3D /> */}
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -73,14 +73,14 @@ const Home = () => {
             transition={{ duration: 1 }}
             className="hidden md:block"
           >
-            <div className="relative aspect-square max-w-md mx-auto">
+            {/* <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-sage rounded-[40px] rotate-6 opacity-20" />
               <img
                 src={banner}
                 alt="Woman smiling"
                 className="relative z-10 w-full h-full object-cover rounded-[40px] shadow-2xl"
               />
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>

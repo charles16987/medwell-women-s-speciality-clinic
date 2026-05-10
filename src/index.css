@@ -62,3 +62,27 @@
 .backdrop-blur-lg .dark\:text-slate-300 {
   color: #fff;
 }
+.banner-img {
+  background-image: url(./assests/banner-img.jpg);
+  background-size: cover;
+}
+.banner-img h1
+{
+ color: #fff !important;
+}
+.banner-img p{
+  color: #fff;
+}
+body {
+  cursor: none;
+}
+/* Smooth Cursor */
+* {
+  cursor: none !important;
+}
+
+/* Optional Glass Glow */
+.cursor-glow {
+  background: #c4622d !important;
+  backdrop-filter: blur(10px) !important;
+}
