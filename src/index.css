@@ -63,7 +63,7 @@
   color: #fff;
 }
 .banner-img {
-  background-image: url(./assests/banner-img.jpg);
+  background-image: url(./assests/banner-img-1.png);
   background-size: cover;
 }
 .banner-img h1
@@ -85,4 +85,12 @@ body {
 .cursor-glow {
   background: #c4622d !important;
   backdrop-filter: blur(10px) !important;
+}
+
+/* .btn-secondary {
+    background-color:#673894;
+} */
+
+.text-sage {
+    color: #673894;
 }
