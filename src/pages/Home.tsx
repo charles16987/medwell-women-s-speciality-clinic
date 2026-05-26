@@ -1,33 +1,83 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Hero3D } from '@/src/components/ui/Hero3D';
 import { TiltCard } from '@/src/components/ui/TiltCard';
-import { Phone, ArrowRight, Star, Heart, Activity, UserRound, Users, ShieldCheck } from 'lucide-react';
+import { Phone, ArrowRight, Star, Heart, Activity, UserRound, Users, ShieldCheck, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import banner from '../assests/banner1.jpg';
 import aboutus from '../assests/about-us-1.jpg';
 
 const Home = () => {
+  const [activePopup, setActivePopup] = useState(null);
+
   const lifecycleCards = [
-    {
-      title: 'Blossom Years',
-      years: 'Puberty & Young Adulthood',
-      description: 'Supporting you through the first chapters of womanhood.',
-      icon: <Heart className="text-terracotta" />,
-    },
-    {
-      title: 'Flourishing Years',
-      years: 'Pregnancy & Motherhood',
-      description: 'Expert care for your journey into new beginnings.',
-      icon: <Activity className="text-terracotta" />,
-    },
-    {
-      title: 'Wisdom Years',
-      years: 'Menopause & Beyond',
-      description: 'Graceful navigation through life’s mature transitions.',
-      icon: <UserRound className="text-terracotta" />,
-    },
-  ];
+  {
+    id: 'blossom',
+    title: 'Blossom Years',
+    years: 'Puberty & Young Adulthood',
+    description: 'Supporting you through the first chapters of womanhood.',
+    icon: <Heart className="text-terracotta" />,
+    tag: 'YOUNG WOMEN\'S HEALTH',
+    story: '"She stood in front of the mirror, feeling both confused and curious about the changes her body was going through. Her mother held her hand and walked her into Medwell. Dr. Anusuya smiled warmly and said: \'Your body is writing its beautiful first chapter—let\'s understand it together.\'"',
+    tamilText: 'பயம் தேவையில்லை — இங்கே நீ நம்பகமாக பேசலாம்.',
+    popupSubtitle: "WE'RE HERE TO BUILD TRUST & LIFELONG HEALTH LITERACY",
+    popupDescription: "Many young women arrive carrying years of silent confusion. We see it as our privilege to replace that silence with clarity — gently, patiently, completely. A girl who understands her body grows into a woman who trusts herself.",
+    bullets: [
+      'Gentle, educational first gynaecology visits',
+      'Menstrual health — irregular cycles, PCOS, pain management',
+      'Hormonal balance & acne wellness guidance',
+      'Family planning & contraception counselling',
+      'Safe space for questions — without embarrassment',
+      'Emotional & mental wellbeing support',
+      'Nutrition & lifestyle guidance for young women'
+    ],
+    mothersCount: 'No judgment. Ever.'
+  },
+  {
+    id: 'flourishing',
+    title: 'Flourishing Years',
+    years: 'Pregnancy & Motherhood',
+    description: 'Expert care for your journey into new beginnings.',
+    icon: <Activity className="text-terracotta" />,
+    tag: 'MATERNITY CARE',
+    story: '"She sat in the waiting room, one hand on her belly, the other clutching her husband\'s. She had been trying to imagine this moment for two years. Now it was real — and she was terrified. Dr. Anusuya walked in, sat down beside her, and said: \'Tell me your story from the very beginning.\'"',
+    tamilText: 'நீ தனியாக இல்லை — நாங்கள் உன்னோடு இருக்கிறோம்.',
+    popupSubtitle: "WE'RE HERE TO PARTNER IN HOPE & NEW BEGINNINGS",
+    popupDescription: "Pregnancy is not just a medical event. It is a profound human transformation. At Medwell, every appointment is an act of reverence for the miracle happening inside you — from your first anxious visit to the joyful moment you hold your baby.",
+    bullets: [
+      'Pre-pregnancy planning & fertility counselling',
+      'Complete antenatal & prenatal care',
+      'High-risk pregnancy monitoring — diabetes, hypertension, twins',
+      'Natural delivery preparation & painless labour support',
+      'Growth scans & fetal wellbeing assessment',
+      'Postnatal care — physical recovery & emotional support',
+      'Breastfeeding guidance & new mother support'
+    ],
+    mothersCount: '5000+ MOTHERS TRUSTED US'
+  },
+  {
+    id: 'wisdom',
+    title: 'Wisdom Years',
+    years: 'Menopause & Beyond',
+    description: 'Graceful navigation through life’s mature transitions.',
+    icon: <UserRound className="text-terracotta" />,
+    tag: 'MIDLIFE & BEYOND',
+    story: '"She thought she was going crazy. The sleeplessness, the sudden tears, the hot flashes that arrived without warning. Her family didn\'t understand. She didn\'t understand. At Medwell, for the first time — someone called it by its name, explained every symptom with kindness, and gave her back herself."',
+    tamilText: 'இது முடிவல்ல — இது ஒரு புதிய தொடக்கம்.',
+    popupSubtitle: "WE'RE HERE TO HONOUR YOUR WISDOM & RENEW YOUR ENERGY",
+    popupDescription: "Menopause is not a disease. It is a transition — and like all great transitions, it deserves to be met with knowledge, grace, and a team that truly understands what you're going through.",
+    bullets: [
+      'Personalised menopause symptom management',
+      'Hormone & non-hormone treatment options',
+      'Bone health, heart health & metabolic assessment',
+      'Mood, sleep & emotional wellbeing support',
+      'Breast & cervical cancer screening',
+      'Cardiovascular & weight management guidance',
+      'Preventive wellness check-ups'
+    ],
+    mothersCount: 'YOUR STRENGTH, RENEWED'
+  }
+];
 
   const services = [
     { title: 'Gynaecology', desc: 'Comprehensive care for every concern.', icon: <ShieldCheck size={32} /> },
@@ -166,22 +216,121 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.2 }}
               >
-                <TiltCard className="bg-sage/10 p-10 rounded-[40px] h-full group hover:bg-sage/20 transition-colors">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                    {card.icon}
-                  </div>
-                  <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2">{card.title}</h3>
-                  <p className="text-xs font-bold text-sage uppercase tracking-widest mb-4">{card.years}</p>
-                  <p className="text-slate-600 mb-8 leading-relaxed">{card.description}</p>
-                  <Link to="/services" className="text-terracotta font-bold flex items-center gap-2 group/link">
-                    Explore care <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </TiltCard>
+                <div 
+                  onClick={() => setActivePopup(card)}
+                  className="cursor-pointer h-full"
+                >
+                  <TiltCard className="bg-sage/10 p-10 rounded-[40px] h-full group hover:bg-sage/20 transition-colors">
+                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2">{card.title}</h3>
+                    <p className="text-xs font-bold text-sage uppercase tracking-widest mb-4">{card.years}</p>
+                    <p className="text-slate-600 mb-8 leading-relaxed">{card.description}</p>
+                    <button className="text-terracotta font-bold flex items-center gap-2 group/link pointer-events-none">
+                      Explore care <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                    </button>
+                  </TiltCard>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* POPUP MODAL COMPONENT */}
+      <AnimatePresence>
+        {activePopup && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
+            {/* Backdrop layer */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActivePopup(null)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+            />
+
+            {/* Popup main Card container */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-2xl bg-[#fdfaf4] rounded-[32px] overflow-hidden shadow-2xl z-10 max-h-[90vh] flex flex-col border border-stone-200"
+            >
+              {/* Header block styling inspired by reference design */}
+              <div className="p-8 pb-6 bg-[#f4ebd9]/40 relative border-b border-stone-100 flex justify-between items-start">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🌸</span>
+                    <span className="text-terracotta text-xs font-bold uppercase tracking-widest">{activePopup.tag}</span>
+                  </div>
+                  <h3 className="text-3xl font-serif font-bold text-slate-900">{activePopup.title}</h3>
+                  <p className="text-slate-600 italic text-sm mt-1">{activePopup.years}</p>
+                </div>
+                
+                <button 
+                  onClick={() => setActivePopup(null)}
+                  className="p-2 rounded-full hover:bg-stone-200/50 transition-colors text-slate-500 hover:text-slate-800 flex items-center gap-1 text-xs font-medium"
+                >
+                  Close <X size={16} />
+                </button>
+              </div>
+
+              {/* Scrollable Context Box */}
+              <div className="p-8 overflow-y-auto space-y-6 flex-1 text-left custom-scrollbar">
+                
+                {/* Doctor blockquote narrative aspect */}
+                <div className="border-l-2 border-terracotta pl-5 italic text-slate-700 font-serif leading-relaxed text-base bg-stone-50/40 p-4 rounded-r-xl">
+                  {activePopup.story}
+                </div>
+
+                {/* Tamil Translation Text Line */}
+                <div className="flex items-center gap-2 text-[#4c8471] font-medium text-base">
+                  <span>✦ ✦</span>
+                  <p className="tracking-wide">{activePopup.tamilText}</p>
+                </div>
+
+                {/* Focus Callout Inner Banner */}
+                <div className="border border-purple-200/60 bg-purple-50/40 rounded-2xl p-6">
+                  <span className="text-xs font-bold text-purple-700 uppercase tracking-widest block mb-2">
+                    ✦ {activePopup.popupSubtitle}
+                  </span>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {activePopup.popupDescription}
+                  </p>
+                </div>
+
+                {/* Care bullets details */}
+                <div className="space-y-3.5">
+                  {activePopup.bullets.map((bullet, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <span className="w-2 h-2 rounded-full bg-terracotta mt-2 shrink-0" />
+                      <p className="text-slate-700 text-sm font-medium leading-normal">{bullet}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTAs and bottom trust bar boundary */}
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stone-100">
+                  <a 
+                    href="https://docterz.com/book-appointment"
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="w-full sm:w-auto bg-terracotta hover:bg-terracotta/90 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg transition-all text-center text-sm"
+                  >
+                    Book Consultation
+                  </a>
+                  <span className="bg-[#f4ebd9]/60 text-terracotta/90 text-xs font-bold tracking-wider px-4 py-2 rounded-full uppercase">
+                    ✦ {activePopup.mothersCount}
+                  </span>
+                </div>
+
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* S5: SERVICES OVERVIEW */}
       <section className="py-24 bg-cream">

@@ -30,6 +30,27 @@ const About = () => {
               <p>"At Medwell, our mission is simple: to make every woman feel seen, heard, and cared for. Healthcare is not just about clinical excellence; it's about the soul of the community we serve."</p>
               <p>With over 15 years of experience in gynaecology and obstetrics, I've seen that the best healing happens when medical science meets a comforting hand. Medwell is my vision of a healthcare sanctuary for women in Tamil Nadu.</p>
             </div>
+             {/* <div className="mt-12 border border-[#b8a7ff] bg-[#f5f1ff] rounded-[28px] p-8">
+               <p className="text-[11px] tracking-[0.35em] uppercase text-[#7d67d9] font-bold mb-6">
+                  What we promise every woman who walks in
+               </p>
+
+               <div className="space-y-4 text-slate-700">
+                  {[
+                  'We will never make you feel rushed or dismissed.',
+                  'We will explain your condition in simple words.',
+                  'We will treat the whole you — body, mind, and emotions.',
+                  'We will celebrate your milestones with you.',
+                  'We will stand by you on the hardest days too.',
+                  ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                     <span className="text-[#7d67d9] mt-1">→</span>
+
+                     <p>{item}</p>
+                  </div>
+                  ))}
+               </div>
+            </div> */}
             <div className="mt-12 pt-8 border-t border-slate-200">
                <p className="font-serif text-3xl font-bold text-slate-900 italic">Dr. Anusuya.V</p>
                <p className="text-sage font-bold tracking-widest text-xs uppercase mt-1">Founder & Chief Consultant</p>
