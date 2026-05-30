@@ -14,51 +14,74 @@ const About = () => {
   return (
     <div className="pt-20">
       {/* S1: FOUNDER'S LETTER */}
-      <section className="py-24 bg-cream">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-          <TiltCard className="aspect-[4/5] max-w-md mx-auto">
-             <img
-              src={aboutus}
-              alt="Dr. Anusuya"
-              className="w-full h-full object-cover rounded-[60px]"
-            />
-          </TiltCard>
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}>
-            <span className="text-terracotta font-bold uppercase tracking-widest text-sm mb-4 inline-block underline decoration-sage/30 underline-offset-8">Founder's Letter</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 leading-tight">Expertise Rooted in Compassion</h2>
-            <div className="space-y-6 text-slate-700 leading-relaxed text-lg italic">
-              <p>"At Medwell, our mission is simple: to make every woman feel seen, heard, and cared for. Healthcare is not just about clinical excellence; it's about the soul of the community we serve."</p>
-              <p>With over 15 years of experience in gynaecology and obstetrics, I've seen that the best healing happens when medical science meets a comforting hand. Medwell is my vision of a healthcare sanctuary for women in Tamil Nadu.</p>
-            </div>
-             {/* <div className="mt-12 border border-[#b8a7ff] bg-[#f5f1ff] rounded-[28px] p-8">
-               <p className="text-[11px] tracking-[0.35em] uppercase text-[#7d67d9] font-bold mb-6">
-                  What we promise every woman who walks in
-               </p>
+      <section className="relative h-[90vh] min-h-[700px] flex items-center overflow-hidden banner-img-1">
+              {/* <Hero3D /> */}
+              <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+                
+      
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                  className="hidden md:block"
+                >
+                  {/* <div className="relative aspect-square max-w-md mx-auto">
+                    <div className="absolute inset-0 bg-sage rounded-[40px] rotate-6 opacity-20" />
+                    <img
+                      src={banner}
+                      alt="Woman smiling"
+                      className="relative z-10 w-full h-full object-cover rounded-[40px] shadow-2xl"
+                    />
+                  </div> */}
+                </motion.div>
+                 <motion.div
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <span className="inline-block px-4 py-1.5 rounded-full bg-terracotta/10 text-terracotta text-xs font-bold uppercase tracking-widest mb-6">
+    A Letter From Our Founder
+  </span>
 
-               <div className="space-y-4 text-slate-700">
-                  {[
-                  'We will never make you feel rushed or dismissed.',
-                  'We will explain your condition in simple words.',
-                  'We will treat the whole you — body, mind, and emotions.',
-                  'We will celebrate your milestones with you.',
-                  'We will stand by you on the hardest days too.',
-                  ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                     <span className="text-[#7d67d9] mt-1">→</span>
+  <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-[1.1] mb-6">
+    I Started Medwell
+    <br />
+    <span className="text-terracotta italic font-normal">
+      Because of You
+    </span>
+  </h1>
 
-                     <p>{item}</p>
-                  </div>
-                  ))}
-               </div>
-            </div> */}
-            <div className="mt-12 pt-8 border-t border-slate-200">
-               <p className="font-serif text-3xl font-bold text-slate-900 italic">Dr. Anusuya.V</p>
-               <p className="text-sage font-bold tracking-widest text-xs uppercase mt-1">Founder & Chief Consultant</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  <p className="text-lg text-slate-600 mb-6 max-w-2xl leading-relaxed">
+    Maybe you've been carrying a worry quietly for months, unsure if it was worth
+    mentioning. Maybe you've felt rushed, unheard, or left with more questions
+    than answers.
+  </p>
 
+  <p className="text-lg text-slate-600 mb-8 max-w-2xl leading-relaxed">
+    I founded Medwell with one simple belief — every woman deserves healthcare
+    that is warm, thorough, and deeply personal. A place where you're seen,
+    heard, and cared for at every stage of life.
+  </p>
+
+  <div className="flex flex-wrap gap-4 items-center">
+    <Link to="/contact" className="btn-primary">
+      Book an Appointment
+    </Link>
+
+    <div className="pl-4 border-l border-slate-300">
+      <p className="font-serif text-xl text-slate-900 italic">
+        Dr. Anusuya V.
+      </p>
+      <p className="text-xs uppercase tracking-widest text-sage font-semibold">
+        Founder & Chief Consultant
+      </p>
+    </div>
+  </div>
+               </motion.div>
+              </div>
+            </section>
+      
+  
       {/* S2: OUR PHILOSOPHY */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">

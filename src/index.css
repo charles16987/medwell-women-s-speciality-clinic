@@ -66,6 +66,17 @@
   background-image: url(./assests/banner-4.png);
   background-size: cover;
 }
+.banner-img-1 {
+  background-image: url(./assests/banner-6.jpg);
+  background-size: cover;
+}
+.banner-img-1 h1
+{
+ color: #fff !important;
+}
+.banner-img-1 p{
+  color: #fff;
+}
 .banner-img h1
 {
  color: #fff !important;

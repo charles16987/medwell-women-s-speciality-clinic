@@ -89,7 +89,7 @@ const Footer = () => (
 
         <ul className="space-y-4 text-slate-600 font-medium">
           <li><a href="/" style={{ color: PRIMARY_COLOR }}>Home</a></li>
-          <li><a href="/about" style={{ color: PRIMARY_COLOR }}>About Us</a></li>
+          <li><a href="/about" style={{ color: PRIMARY_COLOR }}>Our Founder</a></li>
           <li><a href="/services" style={{ color: PRIMARY_COLOR }}>Services</a></li>
           <li><a href="/stories" style={{ color: PRIMARY_COLOR }}>Patient Stories</a></li>
           <li><a href="/contact" style={{ color: PRIMARY_COLOR }}>Contact</a></li>
