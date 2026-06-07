@@ -9,6 +9,7 @@ import aboutus2 from '../assests/Medwell-Story-img-1.jpg';
 import doctor1 from '../assests/doctor-1.jpg';
 import doctor2 from '../assests/doctor-2.jpg';
 import doctor3 from '../assests/doctor-3.jpg';
+import team from '../assests/IMG_3935.JPG';
 
 const About = () => {
   return (
@@ -16,14 +17,14 @@ const About = () => {
       {/* S1: FOUNDER'S LETTER */}
       <section className="relative h-[90vh] min-h-[700px] flex items-center overflow-hidden banner-img-1">
               {/* <Hero3D /> */}
-              <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+              <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10 w-full">
                 
       
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
-                  className="hidden md:block"
+                  className="hidden md:block md:col-span-5"
                 >
                   {/* <div className="relative aspect-square max-w-md mx-auto">
                     <div className="absolute inset-0 bg-sage rounded-[40px] rotate-6 opacity-20" />
@@ -38,6 +39,7 @@ const About = () => {
   initial={{ opacity: 0, x: -50 }}
   whileInView={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
+  className="hidden md:block md:col-span-7"
 >
   <span className="inline-block px-4 py-1.5 rounded-full bg-terracotta/10 text-terracotta text-xs font-bold uppercase tracking-widest mb-6">
     A Letter From Our Founder
@@ -135,10 +137,21 @@ const About = () => {
                <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Meet the Team</h2>
                <p className="text-slate-600">A dedicated team of experts walking beside you.</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+             <div className="">
+                 <div className="bg-white p-6 rounded-[40px] shadow-sm hover:shadow-xl transition-shadow group">
+                    <div className="bg-slate-100 rounded-[30px] mb-6 overflow-hidden">
+                        <img src={team} alt="" className="object-cover"  />
+                    </div>
+                    <div className="text-center">
+                       <p className="font-serif text-xl font-bold">Health Care Specialist</p>
+                       <p className="text-slate-500 text-sm font-semibold uppercase tracking-widest mt-1">Speciality Care</p>
+                    </div>
+                 </div>
+            </div>
+            {/* <div className="grid md:grid-cols-3 gap-8">
                  <div className="bg-white p-6 rounded-[40px] shadow-sm hover:shadow-xl transition-shadow group">
                     <div className="aspect-square bg-slate-100 rounded-[30px] mb-6 overflow-hidden">
-                        <img src={doctor1} alt="" className="w-full h-full object-cover"  />
+                        <img src={team} alt="" className="w-full h-full object-cover"  />
                     </div>
                     <div className="text-center">
                        <p className="font-serif text-xl font-bold">Health Care Specialist</p>
@@ -163,7 +176,7 @@ const About = () => {
                        <p className="text-slate-500 text-sm font-semibold uppercase tracking-widest mt-1">Speciality Care</p>
                     </div>
                  </div>
-            </div>
+            </div> */}
          </div>
       </section>
 
